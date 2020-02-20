@@ -18,7 +18,15 @@ public class Child {
     }
 
     public double calculateBill(){
+        var balanceDue = 0
+        if(age >= 1){
+            balanceDue += 100;
+        else if(age >= 2)
+                balanceDue += 200;
+        else if(age <=3&&age>=4)
 
+
+        }
     }
 
 }
