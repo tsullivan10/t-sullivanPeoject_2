@@ -8,35 +8,43 @@ public class DayCareWorker {
     private ArrayList<Child> childrenInGroup;
 
 
+
     public DayCareWorker(float startingPay, String name){
-        Name = new name();
-        salary = new startingPay();
+        Name =  name;
+        salary = startingPay;
 
     }
 
     public String getName(){
-        return Name;
+        System.out.print("Enter your Name: ");
+
+
+        return null;
     }
 
     public float getSalary(){
 
+        return 0;
     }
 
-    public preformanceReview(){
+    public void performanceReview(){
 
     }
 
     public boolean addChild(Child newKid){
 
+        return false;
     }
 
-    public preformFireDrill(){
+    public void preformFireDrill(){
 
     }
 
-    public removeChild(int daycareID){
+    public void removeChild(int daycareID){
 
     }
+
+
 }
 
 
