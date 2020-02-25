@@ -16,6 +16,7 @@ public class DayCareFacility {
     public void RunDayCare(){
 
 
+
     }
 
     public void admitChild(Scanner passedInputReader){
