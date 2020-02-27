@@ -15,37 +15,32 @@ public class DayCareWorker {
 
     }
 
+
     public String getName(){
-        System.out.print("Enter your Name: ");
-
-
-
-
-        return null;
+        return Name;
     }
 
     public float getSalary(){
-
-        return 0;
+        return salary;
     }
 
-    public void performanceReview(){
+    /*public void performanceReview(){
 
     }
 
     public boolean addChild(Child newKid){
 
-        return false;
+
     }
 
-    public void preformFireDrill(){
+    public String preformFireDrill(){
 
     }
 
     public void removeChild(int daycareID){
 
     }
-
+*/
 
 }
 
