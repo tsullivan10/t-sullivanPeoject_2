@@ -1,16 +1,19 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class DayCareFacility {
     private ArrayList<Child> students;
     private ArrayList<DayCareWorker> employees;
     private Child currentlySelectedChild;
-    private Child currentBill;
     private DayCareWorker currentEmployee;
+    private Child currentBill;
     private double balance = 0;
     private ArrayList<Child> accounts;
+
+
 
 
 
@@ -33,7 +36,7 @@ public class DayCareFacility {
         System.out.println("[3] Take Child out of Program");
         System.out.println("[4] Run Fire Drill");
         System.out.println("[5] End of Year");
-        System.out.println("[6] Calculate Bill");
+        System.out.println("[6] Accounting");
         System.out.println("[7] to Quit");
 
     }
@@ -48,7 +51,7 @@ public class DayCareFacility {
             switch (input) {
                 case 0:
                 case 1:
-                    System.out.println("not ready yet");
+                    admitChild(inputReader);
                     break;
                 case 2:
                     hireEmployee(inputReader);
@@ -57,13 +60,14 @@ public class DayCareFacility {
                     System.out.println("Not ready yet");
                     break;
                 case 4:
-                    performFireDrill();
+                    System.out.println("Not ready yet");
                     break;
                 case 5:
                     System.out.println("Not ready yet");
                     break;
                 case 6:
                     CalculateBill(inputReader);
+                    doAccounting();
                     break;
                 case 7:
                     System.exit(0);
@@ -75,56 +79,53 @@ public class DayCareFacility {
 
 
 
-    public void admitChild(Scanner passedInputReader){
+    public void admitChild(Scanner passedInputReader) {
         System.out.print("Enter new child's name:");
         var name = passedInputReader.next();
         System.out.print("Enter the child's daycare ID:");
-        var daycareID = passedInputReader.nextInt();
-        currentlySelectedChild = new Child(name, daycareID);
+        var ID = passedInputReader.nextInt();
+        currentlySelectedChild = new Child(name, ID);
         students.add(currentlySelectedChild);
-        System.out.println("Created new currently selected child with name "+ currentlySelectedChild.getName() + "and tax Id of "+ currentlySelectedChild.getDaycareID());
+        System.out.println("Created new child with name " + currentlySelectedChild.getName() + " and daycare Id of "
+                + currentlySelectedChild.getDaycareID());
+
+
     }
 
-
-    public void CalculateBill(Scanner passedInputReader){
+    public void CalculateBill(Scanner passedInputReader) {
         System.out.println("Please enter child's name: ");
         var name = passedInputReader.next();
-        System.out.println("Are there any siblings in the program: ");
+        System.out.println("Are there any siblings in the program [Y/N]: ");
         var siblingPlan = passedInputReader.nextBoolean();
         System.out.println("Please enter child's age: ");
         var currentAge = passedInputReader.nextInt();
         System.out.println("Enter how many years this has child attended: ");
         var yearsOfAttendance = passedInputReader.nextInt();
-        currentBill = new Child(name, siblingPlan,currentAge, yearsOfAttendance);
-        if(currentAge == 1){
+        currentBill = new Child(name, siblingPlan, currentAge, yearsOfAttendance);
+        if (currentAge == 1)
             balance = balance + 400;
-        }
-        else if(currentAge == 2 ){
+        else if (currentAge == 2)
             balance = balance + 300;
-        }
-        else if(currentAge == 3){
-            balance =balance + 200;
-        }
-        else if(currentAge == 4){
-            balance =balance + 200;
-        }
-        else if(currentAge > 4){
-            balance =balance + 100;
-        }
-
-        if(siblingPlan == true;){
-            balance = balance + 0;
-        }
-        else{
-            balance = balance - (balance*0.1);
-        }
-
-        balance = balance + (10 *yearsOfAttendance);
-
-        System.out.println("Calculated bill with child " + currentBill.getName() + " age of "+ currentBill.getAge() + ", " + currentBill.getYearsOfAttendance() + ", and " /*+
+        else if (currentAge == 3)
+            balance = balance + 200;
+        else if (currentAge == 4)
+            balance = balance + 200;
+        else if (currentAge > 4)
+            balance = balance + 100;
+        if (siblingPlan.equals)
+            balance = balance - (0.1 * balance);
+        if (yearsOfAttendance < 0)
+            balance = balance + (10 * yearsOfAttendance);
+        System.out.println("Calculated bill with child " + currentBill.getName() + " age of " + currentBill.getAge() + ", " + currentBill.getYearsOfAttendance() + ", and " /*+
                 currentBill.getSiblingInProgram()*/ + " of siblings in program is $" + balance);
+    }
+
+    public void doAccounting(){
 
     }
+
+
+
 
     public void hireEmployee(Scanner passedInputReader){
         System.out.println("Please enter employee name: ");
@@ -134,13 +135,20 @@ public class DayCareFacility {
         currentEmployee = new DayCareWorker(startingPay, name);
         employees.add(currentEmployee);
         System.out.println("New Employee " + currentEmployee.getName() + " will get paid " + currentEmployee.getSalary() + " per hour");
+
     }
 
 
-    public void performFireDrill(){
+    /*public void RunFireDrill(){
         System.out.println("Preforming fire drill");
+        for (String  : employees){
 
-    }
+            System.out.println(students);
+
+        }
+
+        }
+    }*/
 
 
 

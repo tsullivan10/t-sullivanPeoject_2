@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Child {
     private int age;
     private boolean siblingInProgram;
@@ -10,13 +13,21 @@ public class Child {
 
 
 
-    public Child(String name, boolean siblingPlan, int currentAge, int year){
+
+
+
+    public Child(String name, boolean siblingPlan, int currentAge, int years){
         Name =  name;
         siblingInProgram = siblingPlan;
         age = currentAge;
         yearsOfAttendance = 0;
         this.daycareID = nextID;
         nextID++;
+    }
+
+    public Child(String name, int ID) {
+        Name = name;
+        daycareID = ID;
     }
 
 
